@@ -1,0 +1,197 @@
+:root {
+    /* --bg-image: url('../../public/images/bg_image2.png'); */
+    
+    /* Color Palette */
+    --cardigan-cream: #FFEAD8;
+    --cardigan-orange: #E8988A;
+    --cardigan-purple: #9B177E;
+    --cardigan-blue: #2A1458;
+    
+    --white: #ffffff;
+    --black: #000000;
+    
+    /* Background Colors */
+    --bg-main: #fce9d8;
+    --bg-overlay: rgba(0, 0, 0, 0.4);
+    
+    /* Text Colors */
+    --text-dark: #2c2c2c;
+    --text-light: #2c2c2c;
+    --text-muted: rgba(255, 255, 255, 0.7);
+    
+    /* Interactive */
+    --glow: rgba(255, 255, 255, 0.8);
+    --shadow: rgba(0, 0, 0, 0.5);
+}
+
+/* Complete scrollbar removal */
+* {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+*::-webkit-scrollbar {
+    display: none;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden; /* Prevent scrolling */
+}
+
+body {
+    margin: 0;
+    background-color: var(--white);
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;     /* Firefox */
+    overflow-x: hidden;    
+}
+
+.container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    margin: 0; /* Remove auto margin */
+    max-width: none; /* Remove max-width constraint */
+}
+
+/* Overlay positioned above everything */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3; /* Highest z-index */
+    pointer-events: none; /* Allow clicks to pass through to patches */
+    display: flex;
+    align-items: flex-start; /* Changed from 'center' to 'flex-start' */
+    justify-content: center; /* Keep horizontal centering */
+}
+
+.content {
+    color: var(--text-light);
+    text-align: center;
+    pointer-events: auto; /* Re-enable pointer events for content */
+    /* background: rgba(0, 0, 0, 0.3); Optional: semi-transparent background */
+    border-radius: 10px;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+p {
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Option 1: Profile section with content */
+.content-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex-direction: row;
+}
+
+.profile-section {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  pointer-events: auto; /* Enable pointer events for profile section */
+}
+
+.profile-image {
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden;
+  /* border: 1px solid var(--cardigan-blue); */
+  box-shadow: 0 8px 32px var(--cardigan-purple);
+  background: var(--cardigan-cream);
+  transition: box-shadow 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.profile-pic {
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+.profile-image:hover {
+    box-shadow: 0 12px 48px var(--cardigan-orange);
+}
+
+.svg-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Below content, above background image */
+    transform: translateY(50px);
+}
+
+.background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintains aspect ratio */
+    display: block;
+}
+
+svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2; /* Above image, below content */
+}
+
+/* Patch group styles */
+.patch-group {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.patch {
+    fill: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.patch-text {
+    fill: var(--cardigan-cream);
+    font-family: Arial, sans-serif;
+    font-size: 28px;
+    font-weight: bold;
+    text-anchor: middle; /* Center horizontally */
+    dominant-baseline: central; /* Center vertically */
+    pointer-events: none; /* Let clicks pass through to patch */
+    opacity: 0; /* Hidden by default */
+    transition: all 0.3s ease;
+}
+
+#about-link .patch-text
+{
+    opacity: 1; /* Show text by default for the About patch */
+    font-size: 2rem;
+    text-shadow: 2px 2px 4px var(--cardigan-blue);
+}
+
+/* Show text on hover */
+/* Shared hover effects using class selector */
+.patch-link:hover .patch {
+    fill: rgba(255, 255, 255, 0.2);
+}
+
+.patch-link:hover .patch-text {
+    opacity: 1;
+    
+    fill: var(--cardigan-cream);
+    text-shadow: 2px 2px 4px var(--cardigan-purple);
+}
+
