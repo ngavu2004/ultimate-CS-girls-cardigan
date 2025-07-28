@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Nga Vu",
-  description: "Hi! Welcome to my personal website. I'm Nga Vu, a software developer based in Tempe, AZ.",
+  title: "Ultimate CS Girls Cardigan",
+  description: "Welcome to the chaotic pieces of ASU CS department!",
 };
 
 export default function RootLayout({
