@@ -31,7 +31,7 @@ export default function InteractivePatches() {
             className="patch" 
             points="884.5,522 833.5,685 964.5,677.5 932,782.5 1192,726 1116,522 998.5,549.5 921.5,469 884.5,522" 
           />
-          <text x="997" y="633" className="patch-text">3</text>
+          <text x="997" y="633" className="patch-text">Nga Vu - The owner</text>
         </g>
       </Link>
 
