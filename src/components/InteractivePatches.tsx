@@ -15,13 +15,13 @@ export default function InteractivePatches() {
         </g>
       </Link>
 
-      <Link href="" id="placeholder2-link" className="patch-link" target="_blank" rel="noopener noreferrer">
+      <Link href="https://adimarogona.github.io/Hackers-1995-ARFilter/" id="placeholder2-link" className="patch-link" target="_blank" rel="noopener noreferrer">
         <g className="patch-group">
           <polygon 
             className="patch" 
             points="988,370.5 926,471 997.5,547.5 1110,528 1188.5,379 1124,361 988,370.5" 
           />
-          <text x="1050" y="450" className="patch-text">2</text>
+          <text x="1050" y="450" className="patch-text">Ariadne</text>
         </g>
       </Link>
 
